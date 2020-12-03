@@ -1,0 +1,10 @@
+{
+  "name": "@lukasz/barabash",
+  "version": "1.0.0",
+  "dependencies": {
+    "@asyncapi/generator": "0.36.4"
+  },
+  "devDependencies": {
+    "@asyncapi/generator": "0.37.0"
+  }
+}
