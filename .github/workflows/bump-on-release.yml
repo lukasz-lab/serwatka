@@ -1,0 +1,20 @@
+name: Bump package in dependent repos on release
+
+on: release
+
+jobs:
+
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Bumping
+        uses: derberg/org-projects-dependency-manager@7395bb4c4c9237ff7a3500082a87aeda906ccd9c
+        with:
+          github_token: ${{ secrets.CUSTOM_TOKEN }}
+          repos_to_ignore: "piontek"
+          packagejson_path: ./gleboko
+          committer_username: pomidor
+          committer_email: pomidor@pomidor.com
+          commit_message_prod: "fix: update internal production dependencies"
+          commit_message_dev: "chore: update internal development dependencies"
